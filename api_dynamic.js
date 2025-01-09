@@ -9,10 +9,10 @@ const show_data=(loader_data)=>{
     
     const find_container=document.getElementById('main_container')
     for(let data of loader_data){
-        // running loop for fetures
+
+        // running loop for show  features
         const bring_li_list=document.createElement('ul')
-        
-        for(let x of data.features){
+       for(let x of data.features){
             console.log(x)
            
             const create_li=document.createElement('li')
@@ -20,28 +20,27 @@ const show_data=(loader_data)=>{
             bring_li_list.appendChild(create_li)
            
         }
-         
-        
+         // ending loop for show  features
         console.log("loaded data",data);
         const create_container2=document.createElement('div')
         create_container2.innerHTML=`
         <div class="card bg-base-100 w-96 shadow-xl">
-  
-  <figure>
+   <figure>
     <img
       src='${data?.image?data.image :"Data is not found"}'
       alt="Image is not found" />
   </figure>
   <div class="card-body">
     <h2 class="card-title">Features</h2>
-    <div class='list_container'>
-   
-    </div>
-    
+    // dynamic list container start 
+    <div class='list_container text-[#585858] text-sm'></div>
+    // dynamic list container End
     <p>If a dog chews shoes whose shoes does he choose?</p>
   </div>
 </div>
         `
+        // appending part
+        // now I understand where should I use query and getElement
         const find_li_container=create_container2.querySelector('.list_container')
         find_li_container.appendChild(bring_li_list)
         find_container.appendChild(create_container2)
