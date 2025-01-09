@@ -9,6 +9,17 @@
       rel="stylesheet"
       type="text/css"
     />
+    <!-- good to screen -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        overflow-x: auto; /* Horizontal scrolling enabled */
+      }
+    </style>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
@@ -32,8 +43,11 @@
       </div>
     </header>
     <main class="min-h-screen">
-      <div>
-        <div></div>
+      <div class="flex justify-center">
+        <div
+          id="main_container"
+          class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3"
+        ></div>
       </div>
     </main>
     <script src="./api_dynamic.js"></script>
