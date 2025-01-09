@@ -9,6 +9,18 @@ const show_data=(loader_data)=>{
     
     const find_container=document.getElementById('main_container')
     for(let data of loader_data){
+        // running loop for fetures
+        const bring_li_list=document.createElement('ul')
+        
+        for(let x of data.features){
+            console.log(x)
+           
+            const create_li=document.createElement('li')
+            create_li.innerText=x;
+            bring_li_list.appendChild(create_li)
+           
+        }
+         
         
         console.log("loaded data",data);
         const create_container2=document.createElement('div')
@@ -17,15 +29,21 @@ const show_data=(loader_data)=>{
   
   <figure>
     <img
-      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-      alt="Shoes" />
+      src='${data?.image?data.image :"Data is not found"}'
+      alt="Image is not found" />
   </figure>
   <div class="card-body">
-    <h2 class="card-title">Shoes!</h2>
+    <h2 class="card-title">Features</h2>
+    <div class='list_container'>
+   
+    </div>
+    
     <p>If a dog chews shoes whose shoes does he choose?</p>
   </div>
 </div>
         `
+        const find_li_container=create_container2.querySelector('.list_container')
+        find_li_container.appendChild(bring_li_list)
         find_container.appendChild(create_container2)
 
     }
