@@ -11,7 +11,7 @@ const show_data=(loader_data)=>{
     for(let data of loader_data){
 
         // running loop for show  features
-        const bring_li_list=document.createElement('ul')
+        const bring_li_list=document.createElement('ol')
        for(let x of data.features){
             console.log(x)
            
@@ -24,7 +24,7 @@ const show_data=(loader_data)=>{
         console.log("loaded data",data);
         const create_container2=document.createElement('div')
         create_container2.innerHTML=`
-        <div class="card bg-base-100 w-96 shadow-xl">
+        <div onclick='show_details("${data.id}")' class="card bg-base-100 w-96 shadow-xl">
    <figure>
     <img
       src='${data?.image?data.image :"Data is not found"}'
@@ -33,7 +33,7 @@ const show_data=(loader_data)=>{
   <div class="card-body">
     <h2 class="card-title">Features</h2>
     
-    <div class='list_container text-[#585858] text-sm'></div>
+    <div class='list_container text-[#585858] text-sm '></div>
     <hr>
     
     <h1>${data.name}</h1>
@@ -61,5 +61,8 @@ const show_data=(loader_data)=>{
 
 }
 
+const show_details=async(id)=>{
+  console.log('total',id)
+}
 // call the data 
 bring_data()
