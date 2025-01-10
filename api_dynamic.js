@@ -32,10 +32,22 @@ const show_data=(loader_data)=>{
   </figure>
   <div class="card-body">
     <h2 class="card-title">Features</h2>
-    // dynamic list container start 
+    
     <div class='list_container text-[#585858] text-sm'></div>
-    // dynamic list container End
-    <p>If a dog chews shoes whose shoes does he choose?</p>
+    <hr>
+    
+    <h1>${data.name}</h1>
+    <div class='flex gap-2'>
+    <img
+          src="image/vector-illustration-red-calendar-icon_874723-223.avif"
+          alt=""
+          srcset=""
+          class='w-4'
+        />
+    <P>${data.published_in}</p>
+    </div>
+    
+    
   </div>
 </div>
         `
