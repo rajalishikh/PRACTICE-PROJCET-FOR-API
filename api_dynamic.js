@@ -64,7 +64,13 @@ const show_data=(loader_data)=>{
 const show_details=async(id)=>{
   const bring_data=await fetch(`https://openapi.programming-hero.com/api/ai/tool/${id}`)
   const con_json=await bring_data.json()
-  console.log(con_json.data)
+  show_details_2(con_json.data)
+}
+
+const show_details_2=(details)=>{
+  console.log(details)
+  my_modal_4.showModal()
+
 }
 // call the data 
 bring_data()
