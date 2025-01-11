@@ -62,7 +62,9 @@ const show_data=(loader_data)=>{
 }
 
 const show_details=async(id)=>{
-  console.log('total',id)
+  const bring_data=await fetch(`https://openapi.programming-hero.com/api/ai/tool/${id}`)
+  const con_json=await bring_data.json()
+  console.log(con_json.data)
 }
 // call the data 
 bring_data()
