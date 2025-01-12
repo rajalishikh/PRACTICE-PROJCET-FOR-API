@@ -60,12 +60,13 @@ const show_data=(loader_data)=>{
     }
 
 }
-
+// call the api of details part 
 const show_details=async(id)=>{
   const bring_data=await fetch(`https://openapi.programming-hero.com/api/ai/tool/${id}`)
   const con_json=await bring_data.json()
   show_details_2(con_json.data)
 }
+// show the details part in my project 
 
 const show_details_2=(details)=>{
   console.log(details)
@@ -104,18 +105,18 @@ const show_details_2=(details)=>{
                   <div>
                     <h3 class="text-black font-medium text-xl">Features</h3>
                     <ul>
-                      <li>tea</li>
-                      <li>coffe</li>
-                      <li>coffe</li>
+                      <li>${details.features[1]?.feature_name}</li>
+                      <li>${details.features[2]?.feature_name} </li>
+                      <li>${details.features[3]?.feature_name} </li>
                     </ul>
                   </div>
                   <!-- integration -->
                   <div>
                     <h3 class="text-black font-medium text-xl">Integrations</h3>
                     <ul>
-                      <li>tea</li>
-                      <li>coffe</li>
-                      <li>coffe</li>
+                      <li>${details.integrations[0]}</li>
+                      <li>${details.integrations[1]}</li>
+                      <li>${details.integrations[2]} </li>
                     </ul>
                   </div>
                 </div>
@@ -126,21 +127,29 @@ const show_details_2=(details)=>{
               class="bg-[#E7E7E7FF] p-4 w-[487px] border border-white rounded-xl"
             >
               <div class="flex justify-center">
-                <div>
-                  <img
-                    class="w-80"
-                    src="image/1736658310270.jpeg"
+                <div  class="static ...">
+               <div class="relative">
+               <div class='absolute right-0 top-0' > <p class='text-white bg-[#EB5757] p-2 w-32 rounded-xl '>${details.accuracy.score} accuracy</p></div>
+               
+               </div>
+               <div class="static ...">
+               <img
+                    class="w-[437px] rounded-xl"
+                    src="${details.image_link[0]}"
                     alt=""
                     srcset=""
                   />
+               </div>
+
+                  
                 </div>
               </div>
               <h2 class="text-center text-[#111111] font-semibold text-2xl">
-                Hi, how are you doing today?
+                ${details.input_output_examples[0].input}
               </h2>
               <p class="text-center text-sm text-[#585858]">
-                I'm doing well, thank you for asking. How can I <br />assist you
-                today?/p>
+              ${details.input_output_examples[0].output}
+                </p>
               </p>
             </div>
           </div>
