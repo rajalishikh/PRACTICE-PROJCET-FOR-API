@@ -70,6 +70,7 @@ const show_details=async(id)=>{
 const show_details_2=(details)=>{
   console.log(details)
   my_modal_4.showModal()
+  
 
 }
 // call the data 
