@@ -69,6 +69,7 @@ const show_details=async(id)=>{
 
 const show_details_2=(details)=>{
   console.log(details)
+  console.log("my pricing",details.pricing[0].price)
   my_modal_4.showModal()
   const find_container=document.getElementById('container_design')
   
@@ -80,20 +81,21 @@ const show_details_2=(details)=>{
             >
               <div>
                 <h1 class="text-[#111111] font-semibold text-2xl">
-                  ChatGPT is an AI-powered <br />
-                  chatbot platform that uses <br />
-                  OpenAI's GPT technology to <br />simulate human conversation.
+                  ${details.description}
                 </h1>
                 <!-- money dib -->
                 <div class="grid grid-cols-3 gap-3">
-                  <div class="bg-[#FFFFFF] p-3 rounded-xl">
-                    <div class="text-center text-[#03A30A]">a</div>
+                  <div class="bg-[#FFFFFF] p-3 rounded-xl text-sm">
+                    <div class="text-center text-[#03A30A]">${details.pricing[0].price},</br>
+                    ${details.pricing[0].plan}</div>
                   </div>
                   <div class="bg-[#FFFFFF] p-3 rounded-xl">
-                    <div class="text-center text-[#F28927]">a</div>
+                    <div class="text-center text-[#F28927]">${details.pricing[1].price},</br>
+                    ${details.pricing[1].plan} </div>
                   </div>
                   <div class="bg-[#FFFFFF] p-3 rounded-xl">
-                    <div class="text-center text-[#EB5757]">a</div>
+                    <div class="text-center text-[#EB5757]">${details.pricing[2].price},</br>
+                    ${details.pricing[2].plan}</div>
                   </div>
                 </div>
                 <!-- features and integration -->
